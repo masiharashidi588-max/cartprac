@@ -64,6 +64,15 @@ table{width:100%;border-collapse:collapse;position:relative;z-index:1}th,td{text
 /* store */
 .store-banner{margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 20px;background:linear-gradient(90deg,#320b14,#150a0e 70%);border:1px solid #5b1a28;border-radius:12px}.store-banner p{margin:0;font-size:12px;color:#d0b8bd;line-height:1.6}.store-banner strong{color:white}.preview-chip{white-space:nowrap;border:1px solid #71313d;padding:8px 10px;border-radius:6px;font-family:var(--mono);font-size:9px;color:#ff929a;letter-spacing:.1em}
 .store-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.product{position:relative;overflow:hidden;background:linear-gradient(150deg,#1a1014,#0c080a);border:1px solid #421923;border-radius:16px;transition:transform .28s,border-color .28s,box-shadow .28s}.product:hover{transform:translateY(-7px);border-color:#ba3344;box-shadow:0 20px 50px #0005,0 0 30px #ff20340d}.product.featured{border-color:#8f2836;background:linear-gradient(150deg,#281017,#10090c)}.product-ribbon{position:absolute;top:15px;left:15px;z-index:2;font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:#ffe3e6;border:1px solid #8c2b39;background:#2c0d13de;padding:7px 9px;border-radius:6px}.product-visual{height:190px;display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 90%,#be102b30,transparent 48%),linear-gradient(180deg,#160b0f,#10090c);border-bottom:1px solid #32151b}.product-visual:before{content:"";position:absolute;inset:0;opacity:.23;background:linear-gradient(135deg,transparent 0 48%,#ff485718 48% 49%,transparent 49% 100%);background-size:24px 24px}.product-visual:after{content:"";position:absolute;bottom:23px;width:130px;height:11px;border-radius:50%;background:#ff213a24;filter:blur(11px)}.product-img{width:140px;height:140px;object-fit:contain;z-index:1;filter:drop-shadow(0 12px 19px #0009) drop-shadow(0 0 16px #fa253a30);transition:transform .35s}.product:hover .product-img{transform:translateY(-7px) rotate(-4deg) scale(1.06)}.product-body{padding:21px}.product-category{font-family:var(--mono);font-size:9px;letter-spacing:.15em;color:#ff6a76;text-transform:uppercase}.product h3{font-size:21px;letter-spacing:-.04em;margin:9px 0 8px}.product p{min-height:42px;font-size:12px;color:#a99297;line-height:1.7;margin:0}.product-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:19px;padding-top:16px;border-top:1px solid #32151b}.price{font-family:var(--mono);font-size:10px;color:#d7c0c5;letter-spacing:.05em}.product .btn{min-height:38px;padding:0 12px;font-size:9px}.product .btn:disabled{cursor:default;opacity:.7}.product .btn:disabled:hover{transform:none;box-shadow:none}
+
+/* Editable rank shop + rank details modal */
+.store-config-hint,.staff-config-hint{margin:14px 2px 0;color:#806a70;font:10px/1.8 var(--mono);letter-spacing:.035em}
+.store-config-hint code,.staff-config-hint code{color:#ff9aa3;background:#210c12;border:1px solid #54202a;border-radius:4px;padding:2px 5px}
+.rank-card{cursor:pointer;outline:none}.rank-card:focus-visible{border-color:#ff6b78;box-shadow:0 0 0 3px #ff293b2b}.rank-card .rank-price{font-size:19px;font-weight:950;letter-spacing:-.04em;color:#fff;white-space:nowrap}.rank-card .price-unit{font-size:9px;color:#806971;font-family:var(--mono);letter-spacing:.08em;display:block;margin-top:3px}.rank-card .product-foot{align-items:center}.rank-card .btn{white-space:nowrap}
+.rank-modal{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:22px}.rank-modal[hidden]{display:none}.rank-modal-backdrop{position:absolute;inset:0;background:#050205d9;backdrop-filter:blur(10px);animation:modalFade .18s ease both}.rank-dialog{position:relative;z-index:1;width:min(540px,100%);max-height:min(88vh,800px);overflow:auto;padding:31px;background:radial-gradient(ellipse at 100% 0,#6e102254,transparent 40%),linear-gradient(145deg,#1d1015,#0a0709);border:1px solid #7b2635;border-radius:18px;box-shadow:0 30px 100px #000b,0 0 45px #ff25351c;animation:dialogPop .22s cubic-bezier(.2,.85,.2,1) both}.rank-close{position:absolute;right:17px;top:13px;border:0;background:transparent;color:#d9bfc4;font-size:30px;line-height:1;cursor:pointer;transition:color .2s,transform .2s}.rank-close:hover{color:white;transform:rotate(90deg)}.rank-dialog-kicker{font:10px var(--mono);letter-spacing:.19em;color:#ff6976}.rank-dialog h2{font-size:clamp(34px,7vw,48px);letter-spacing:-.07em;margin:12px 35px 2px 0}.rank-dialog-price{font-size:31px;font-weight:950;letter-spacing:-.06em;color:#fff;margin:9px 0 14px}.rank-dialog-price span{font:9px var(--mono);letter-spacing:.12em;color:#8b747a;margin-left:7px}.rank-dialog-description{font-size:13px;line-height:1.8;color:#c0aab0;margin:0 0 22px}.rank-perks-title{font:10px var(--mono);letter-spacing:.15em;color:#ff7984;border-bottom:1px solid #3e1a23;padding-bottom:10px}.rank-perks{list-style:none;padding:0;margin:0}.rank-perks li{position:relative;padding:11px 10px 11px 27px;border-bottom:1px solid #271319;color:#e4d5d8;font-size:12px;line-height:1.5}.rank-perks li:before{content:"+";position:absolute;left:6px;color:#ff5361;font-weight:950;font-size:16px;top:8px}.rank-dialog-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.rank-dialog-actions .btn{flex:1;min-width:140px}.rank-dialog-note{font-size:10px;line-height:1.7;color:#8f777d;margin:15px 0 0}.rank-dialog-note.is-warning{color:#ffb1b8}.staff-skin{width:78px;height:88px;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(0 11px 10px #0008);position:relative;z-index:1}.staff-card .staff-name{overflow-wrap:anywhere}.staff-grid{align-items:stretch}
+@keyframes modalFade{from{opacity:0}to{opacity:1}}@keyframes dialogPop{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:760px){.rank-dialog{padding:25px 20px}.rank-dialog-actions{flex-direction:column}.rank-dialog-actions .btn{width:100%}.rank-card .product-foot{align-items:flex-start}}
+
 /* staff */
 .staff-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.staff-card{padding:23px 19px 20px;background:linear-gradient(145deg,#191014,#0d090b);border:1px solid #39171f;border-radius:15px;position:relative;overflow:hidden;transition:transform .25s,border-color .25s}.staff-card:hover{transform:translateY(-5px);border-color:#98303d}.staff-card:after{content:"";position:absolute;right:-40px;top:-45px;width:110px;height:110px;background:#ff22351b;transform:rotate(45deg)}.staff-top{display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1}.role{font-family:var(--mono);font-size:9px;letter-spacing:.13em;padding:7px 8px;border:1px solid #56202a;border-radius:6px;color:#ff8b95;background:#240c12}.role.owner{color:#ffdd90;border-color:#6d4d23;background:#21170b}.staff-status{width:7px;height:7px;border-radius:50%;background:#4fbb83;box-shadow:0 0 10px #4fbb8370}.skin-frame{height:112px;display:grid;place-items:center;position:relative;margin:11px 0 8px}.skin-frame:before{content:"";position:absolute;width:112px;height:72px;border-radius:50%;background:#e51c3414;filter:blur(18px)}.pixel-avatar{width:62px;height:72px;position:relative;z-index:1;image-rendering:pixelated;filter:drop-shadow(0 11px 10px #0008);background:linear-gradient(90deg,transparent 0 12%,#5b2021 12% 25%,#8f3330 25% 75%,#5b2021 75% 88%,transparent 88%),linear-gradient(#c98b66 0 0);clip-path:polygon(16% 0,84% 0,84% 14%,100% 14%,100% 55%,84% 55%,84% 100%,16% 100%,16% 55%,0 55%,0 14%,16% 14%)}.pixel-avatar:before{content:"";position:absolute;left:0;right:0;top:10px;height:18px;background:linear-gradient(90deg,#24151a 0 13%,#39202a 13% 27%,#24151a 27% 73%,#39202a 73% 87%,#24151a 87%);box-shadow:0 8px 0 #bd825f,0 16px 0 #21151a}.pixel-avatar:after{content:"";position:absolute;left:11px;top:29px;width:8px;height:5px;background:#1d1115;box-shadow:32px 0 0 #1d1115,9px 13px 0 -1px #a74c4e,14px 15px 0 -1px #a74c4e}.avatar-admin{filter:hue-rotate(23deg) drop-shadow(0 11px 10px #0008)}.avatar-mod{filter:hue-rotate(170deg) drop-shadow(0 11px 10px #0008)}.avatar-builder{filter:hue-rotate(65deg) drop-shadow(0 11px 10px #0008)}.staff-name{font-size:16px;font-weight:850;letter-spacing:-.02em;margin:0 0 6px}.staff-hint{font-family:var(--mono);font-size:9px;letter-spacing:.08em;color:#806b70}.staff-desc{color:#a89196;font-size:11px;line-height:1.65;margin:13px 0 0}
 /* lower CTA and footer */
@@ -154,23 +163,15 @@ table{width:100%;border-collapse:collapse;position:relative;z-index:1}th,td{text
 
   <section id="store" class="section wrap reveal">
     <div class="section-head"><div><div class="section-kicker">03 // Gear up</div><h2 class="section-title">THE <span class="red">STORE</span></h2></div><div class="section-note">Your style.<br>Your loadout. Your legacy.</div></div>
-    <div class="store-banner"><p><strong>CartPrac Drop 01</strong> — Memberships, cosmetics and extras are being prepared. These cards are the store layout; connect your checkout URL and set the real prices before launch.</p><span class="preview-chip">STORE PREVIEW</span></div>
-    <div class="store-grid">
-      <article class="product"><div class="product-ribbon">NETWORK PERK</div><div class="product-visual"><img class="product-img" src="https://blockrender.dev/render/item/diamond.png?size=512" alt="Minecraft diamond item" loading="lazy" onerror="this.onerror=null;this.src='https://blockrender.dev/render/item/tnt_minecart.png?size=512'"></div><div class="product-body"><div class="product-category">01 // MEMBERSHIP</div><h3>VANGUARD</h3><p>A clean supporter tier for players who want their place in the network.</p><div class="product-foot"><span class="price">PRICE: TO BE SET</span><button class="btn" type="button" onclick="openStore('vanguard')">VIEW ITEM <span class="arrow">↗</span></button></div></div></article>
-      <article class="product featured"><div class="product-ribbon">COMMUNITY FAVOURITE</div><div class="product-visual"><img class="product-img" src="https://blockrender.dev/render/item/tnt_minecart.png?size=512" alt="Minecraft TNT minecart item" loading="lazy"></div><div class="product-body"><div class="product-category">02 // COSMETIC DROP</div><h3>REDLINE</h3><p>Stand out with a signature red identity. Final perks and contents can be customized.</p><div class="product-foot"><span class="price">PRICE: TO BE SET</span><button class="btn btn-primary" type="button" onclick="openStore('redline')">VIEW ITEM <span class="arrow">↗</span></button></div></div></article>
-      <article class="product"><div class="product-ribbon">LIMITED DROP</div><div class="product-visual"><img class="product-img" src="https://blockrender.dev/render/item/emerald.png?size=512" alt="Minecraft emerald item" loading="lazy" onerror="this.onerror=null;this.src='https://blockrender.dev/render/item/tnt_minecart.png?size=512'"></div><div class="product-body"><div class="product-category">03 // SUPPORTER PACK</div><h3>OVERDRIVE</h3><p>A premium supporter pack concept, ready for your actual perks and payment setup.</p><div class="product-foot"><span class="price">PRICE: TO BE SET</span><button class="btn" type="button" onclick="openStore('overdrive')">VIEW ITEM <span class="arrow">↗</span></button></div></div></article>
-    </div>
+    <div class="store-banner"><p><strong>CHOOSE YOUR RANK.</strong> Each rank has its own price and its own optional checkout link. Click a rank to see its perks and purchase option.</p><span class="preview-chip">RANK SHOP</span></div>
+    <div class="store-grid" id="storeGrid" aria-live="polite"></div>
+    <p class="store-config-hint">PRICES ARE STARTER EXAMPLES. Edit the <code>RANKS</code> list near the bottom of this file to change prices, perks, and each rank’s individual links.</p>
   </section>
 
   <section id="staff" class="section wrap reveal">
     <div class="section-head"><div><div class="section-kicker">04 // The people behind the server</div><h2 class="section-title">MEET THE <span class="red">STAFF</span></h2></div><div class="section-note">Built by players.<br>Kept running by a team.</div></div>
-    <div class="staff-grid">
-      <article class="staff-card"><div class="staff-top"><span class="role owner">OWNER</span><span class="staff-status" title="Team member"></span></div><div class="skin-frame"><div class="pixel-avatar"></div></div><h3 class="staff-name">YOUR IGN</h3><div class="staff-hint">NETWORK FOUNDER</div><p class="staff-desc">The person with the vision — and the final say on the network.</p></article>
-      <article class="staff-card"><div class="staff-top"><span class="role">ADMIN</span><span class="staff-status" title="Team member"></span></div><div class="skin-frame"><div class="pixel-avatar avatar-admin"></div></div><h3 class="staff-name">ADMIN IGN</h3><div class="staff-hint">NETWORK OPERATIONS</div><p class="staff-desc">Keeps systems organized, fair and running smoothly.</p></article>
-      <article class="staff-card"><div class="staff-top"><span class="role">MODERATOR</span><span class="staff-status" title="Team member"></span></div><div class="skin-frame"><div class="pixel-avatar avatar-mod"></div></div><h3 class="staff-name">MOD IGN</h3><div class="staff-hint">PLAYER SUPPORT</div><p class="staff-desc">Helps players, handles reports and protects the community.</p></article>
-      <article class="staff-card"><div class="staff-top"><span class="role">BUILDER</span><span class="staff-status" title="Team member"></span></div><div class="skin-frame"><div class="pixel-avatar avatar-builder"></div></div><h3 class="staff-name">BUILDER IGN</h3><div class="staff-hint">WORLD DESIGN</div><p class="staff-desc">Shapes the arenas and details that give CartPrac its identity.</p></article>
-    </div>
-    <p style="font-size:10px;color:#715b61;margin:14px 2px 0;font-family:var(--mono);letter-spacing:.04em">STAFF CARDS ARE PLACEHOLDERS — REPLACE THE DISPLAY NAMES AND ROLES WITH YOUR REAL TEAM.</p>
+    <div class="staff-grid" id="staffGrid" aria-live="polite"></div>
+    <p class="staff-config-hint">EDIT STAFF NAMES AND ROLES IN THE <code>STAFF</code> LIST NEAR THE BOTTOM OF <code>index.html</code>. Add another object to add another card; delete one to remove a card.</p>
   </section>
 
   <section id="play" class="section wrap reveal" style="padding-top:35px;padding-bottom:10px">
@@ -178,15 +179,96 @@ table{width:100%;border-collapse:collapse;position:relative;z-index:1}th,td{text
   </section>
 </main>
 <footer class="footer"><div class="wrap"><div class="footer-main"><div class="footer-left"><div class="footer-mark">◆</div><div><div class="footer-brand">CARTPRAC NETWORK</div><div class="footer-small">BUILT DIFFERENT. PLAY TO WIN.</div></div></div><div class="footer-links"><a href="#modes">MODES</a><a href="#store">STORE</a><a href="#staff">STAFF</a><a href="#leaderboard">RANKINGS</a></div></div><div class="footer-note"><span>© <span id="year"></span> CARTPRAC. ALL RIGHTS RESERVED.</span><span>NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</span></div></div></footer>
+<div class="rank-modal" id="rankModal" hidden>
+  <div class="rank-modal-backdrop" onclick="closeRankModal()" aria-hidden="true"></div>
+  <section class="rank-dialog" role="dialog" aria-modal="true" aria-labelledby="modalRankName">
+    <button class="rank-close" type="button" onclick="closeRankModal()" aria-label="Close rank details">×</button>
+    <div class="rank-dialog-kicker" id="modalRankBadge">CARTPRAC RANK</div>
+    <h2 id="modalRankName">RANK NAME</h2>
+    <div class="rank-dialog-price" id="modalRankPrice">$0.00 <span>ONE-TIME</span></div>
+    <p class="rank-dialog-description" id="modalRankDescription"></p>
+    <div class="rank-perks-title">RANK PERKS</div>
+    <ul class="rank-perks" id="modalRankPerks"></ul>
+    <div class="rank-dialog-actions">
+      <button class="btn" type="button" onclick="copyRankLink()">COPY RANK LINK ⧉</button>
+      <a class="btn" id="rankDetailsLink" href="#" target="_blank" rel="noopener noreferrer" hidden>MORE DETAILS ↗</a>
+      <button class="btn btn-primary" id="rankPurchaseButton" type="button" onclick="buyCurrentRank()">BUY THIS RANK ↗</button>
+    </div>
+    <p class="rank-dialog-note" id="rankModalNote">Each rank can use its own checkout link.</p>
+  </section>
+</div>
 <script>
 /* =========================
    CARTPRAC SITE CONFIGURATION
    Replace these placeholders before launch.
    ========================= */
 const API_BASE = "https://cartprac-api.masiharashidi588.workers.dev";
-const STORE_URL = "https://YOUR-STORE-URL";
 const SERVER_ADDRESS = "cartprac.ir";
-const DISCORD_INVITE = "https://discord.gg/YOUR-INVITE";
+const DISCORD_INVITE = "https://discord.gg/P7HC6V8Pnk";
+
+/*
+  =========================
+  EDIT YOUR RANKS HERE
+  - price is the displayed one-time price, in the currency set per rank.
+  - checkoutUrl is the DIRECT purchase link for that specific rank.
+  - detailsUrl is optional; add a separate info/perks link if you have one.
+  - Leave a link as "" until you have a real checkout/details page.
+  These prices are starter examples: adjust them to what you actually want to charge.
+  =========================
+*/
+const RANKS = [
+  {
+    id: "TNTCART",
+    name: "TNTCART",
+    badge: "STARTER RANK",
+    price: 100,
+    currency: "Toman",
+    item: "tnt_minecart.png",
+    description: "Your first step into the CartPrac ranks. A clean supporter tier for players who want to represent the network.",
+    perks: ["TNTCART rank tag", "Rank displayed in chat and player list", "Supporter cosmetics when enabled on the server"],
+    checkoutUrl: "",
+    detailsUrl: ""
+  },
+  {
+    id: "MARILIYA",
+    name: "MARILIYA",
+    badge: "MOST POPULAR",
+    price: 200,
+    currency: "Toman",
+    item: "crossbow.png",
+    description: "A more premium CartPrac identity for regular players who want their name to stand out.",
+    perks: ["MARILIYA rank tag", "Everything included in VANGUARD", "Extra chat styling or cosmetics when enabled on the server"],
+    checkoutUrl: "",
+    detailsUrl: ""
+  },
+  {
+    id: "EXPLOSIVE",
+    name: "EXPLOSIVE",
+    badge: "TOP TIER",
+    price: 275,
+    currency: "USD",
+    item: "tnt.png",
+    description: "The top supporter tier concept for players who want the full premium CartPrac look.",
+    perks: ["EXPLOSIVE rank tag", "Everything included in REDLINE", "Premium cosmetic perks when enabled on the server"],
+    checkoutUrl: "",
+    detailsUrl: ""
+  }
+];
+
+/*
+  =========================
+  PUT YOUR STAFF NAMES HERE
+  Replace name with each person's Minecraft username.
+  Add/remove entries to add/remove staff cards. Role, subtitle and description are editable.
+  The Minecraft head image uses the username automatically; set skin to a different username if needed.
+  =========================
+*/
+const STAFF = [
+  { name: "ItsKingBoy", skin: "ItsKingBoy", role: "OWNER", subtitle: "NETWORK FOUNDER", description: "The person with the vision — and the final say on the network." },
+  { name: "RedAwaken", skin: "RedAwaken", role: "ADMIN", subtitle: "NETWORK OPERATIONS", description: "Keeps systems organized, fair and running smoothly." },
+  { name: "BoyCuddler", skin: "Asztere", role: "MODERATOR", subtitle: "PLAYER SUPPORT", description: "Helps players, handles reports and protects the community." },
+  { name: "SadMile", skin: "SadMile_", role: "BUILDER", subtitle: "WORLD DESIGN", description: "Shapes the arenas and details that give CartPrac its identity." }
+];
 
 async function refreshStats(){
   const status = document.getElementById("status");
@@ -234,14 +316,131 @@ async function refreshStats(){
 function escapeHtml(value){
   return String(value).replace(/[&<>"']/g, character => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[character]));
 }
-function openStore(item){
-  if (!STORE_URL || STORE_URL.includes("YOUR-STORE-URL")) {
-    alert("The store layout is ready, but checkout is not connected yet. Set STORE_URL near the bottom of index.html to your store link.");
+let currentRank = null;
+function formatPrice(rank){
+  try {
+    return new Intl.NumberFormat("en-US", {style:"currency", currency:rank.currency || "USD", minimumFractionDigits:2, maximumFractionDigits:2}).format(Number(rank.price || 0));
+  } catch {
+    return "$" + Number(rank.price || 0).toFixed(2);
+  }
+}
+function renderRanks(){
+  const grid = document.getElementById("storeGrid");
+  if (!grid) return;
+  grid.replaceChildren();
+  RANKS.forEach((rank, index) => {
+    const card = document.createElement("article");
+    card.className = "product rank-card" + (index === 1 ? " featured" : "");
+    card.tabIndex = 0;
+    card.setAttribute("role", "button");
+    card.setAttribute("aria-label", "View " + rank.name + " rank details");
+    const itemName = rank.item || "diamond.png";
+    const itemSrc = "https://blockrender.dev/render/item/" + encodeURIComponent(itemName) + "?size=512";
+    const name = escapeHtml(rank.name);
+    const badge = escapeHtml(rank.badge || "CARTPRAC RANK");
+    const desc = escapeHtml(rank.description || "CartPrac supporter rank.");
+    const number = String(index + 1).padStart(2, "0");
+    card.innerHTML = `<div class="product-ribbon">${badge}</div><div class="product-visual"><img class="product-img" src="${itemSrc}" alt="Minecraft ${name} rank item" loading="lazy" onerror="this.onerror=null;this.src='https://blockrender.dev/render/item/tnt_minecart.png?size=512'"></div><div class="product-body"><div class="product-category">${number} // CARTPRAC RANK</div><h3>${name}</h3><p>${desc}</p><div class="product-foot"><div><div class="rank-price">${formatPrice(rank)}</div><span class="price-unit">ONE-TIME PRICE · ${escapeHtml(rank.currency || "USD")}</span></div><button class="btn ${index === 1 ? "btn-primary" : ""}" type="button" data-rank-id="${escapeHtml(rank.id)}">VIEW RANK <span class="arrow">↗</span></button></div></div>`;
+    card.addEventListener("click", event => {
+      if (event.target.closest("button") || event.target === card || event.target.closest(".product-visual,.product-body,.product-ribbon")) openStore(rank.id);
+    });
+    card.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " ") { event.preventDefault(); openStore(rank.id); }
+    });
+    grid.appendChild(card);
+  });
+}
+function renderStaff(){
+  const grid = document.getElementById("staffGrid");
+  if (!grid) return;
+  grid.replaceChildren();
+  STAFF.forEach((member, index) => {
+    const role = String(member.role || "STAFF").toUpperCase();
+    const isOwner = role === "OWNER";
+    const username = String(member.skin || member.name || "Steve").trim();
+    const headUrl = "https://mc-heads.net/avatar/" + encodeURIComponent(username) + "/96";
+    const card = document.createElement("article");
+    card.className = "staff-card";
+    card.innerHTML = `<div class="staff-top"><span class="role ${isOwner ? "owner" : ""}">${escapeHtml(role)}</span><span class="staff-status" title="Team member"></span></div><div class="skin-frame"><img class="staff-skin" src="${headUrl}" alt="Minecraft head of ${escapeHtml(member.name || "staff member")}" loading="lazy" onerror="this.style.display='none'"></div><h3 class="staff-name">${escapeHtml(member.name || "Staff member")}</h3><div class="staff-hint">${escapeHtml(member.subtitle || "CARTPRAC TEAM")}</div><p class="staff-desc">${escapeHtml(member.description || "Part of the CartPrac team.")}</p>`;
+    grid.appendChild(card);
+  });
+}
+function openStore(item, updateHash = true){
+  const rank = RANKS.find(entry => entry.id === item);
+  if (!rank) return;
+  currentRank = rank;
+  // Each rank gets its own shareable page URL, without jumping the page scroll position.
+  if (updateHash && window.location.hash !== "#rank-" + rank.id) history.pushState(null, "", window.location.pathname + window.location.search + "#rank-" + rank.id);
+  document.getElementById("modalRankBadge").textContent = rank.badge || "CARTPRAC RANK";
+  document.getElementById("modalRankName").textContent = rank.name;
+  document.getElementById("modalRankPrice").innerHTML = escapeHtml(formatPrice(rank)) + " <span>ONE-TIME</span>";
+  document.getElementById("modalRankDescription").textContent = rank.description || "CartPrac supporter rank.";
+  const perks = document.getElementById("modalRankPerks");
+  perks.replaceChildren();
+  (Array.isArray(rank.perks) ? rank.perks : []).forEach(perk => {
+    const li = document.createElement("li");
+    li.textContent = perk;
+    perks.appendChild(li);
+  });
+  const detailsLink = document.getElementById("rankDetailsLink");
+  if (rank.detailsUrl && /^https?:\/\//i.test(rank.detailsUrl)) {
+    detailsLink.href = rank.detailsUrl;
+    detailsLink.hidden = false;
+  } else {
+    detailsLink.hidden = true;
+    detailsLink.removeAttribute("href");
+  }
+  const note = document.getElementById("rankModalNote");
+  note.classList.remove("is-warning");
+  note.textContent = rank.checkoutUrl ? "You will be sent to the checkout page for this rank." : "This rank has its own checkoutUrl setting, but it is blank right now. Add a direct payment link to this rank in the RANKS list near the bottom of index.html.";
+  document.getElementById("rankPurchaseButton").textContent = rank.checkoutUrl ? "BUY " + rank.name + " ↗" : "PURCHASE LINK NOT SET";
+  document.getElementById("rankModal").hidden = false;
+  document.body.style.overflow = "hidden";
+  document.getElementById("rankCloseButton")?.focus();
+  document.querySelector(".rank-close")?.focus();
+}
+function closeRankModal(updateHash = true){
+  document.getElementById("rankModal").hidden = true;
+  document.body.style.overflow = "";
+  currentRank = null;
+  if (updateHash && /^#rank-[a-z0-9-]+$/i.test(window.location.hash)) {
+    history.replaceState(null, "", window.location.pathname + window.location.search);
+  }
+}
+function copyRankLink(){
+  if (!currentRank) return;
+  const url = window.location.href.split("#")[0] + "#rank-" + currentRank.id;
+  const note = document.getElementById("rankModalNote");
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(() => {
+      note.classList.remove("is-warning");
+      note.textContent = "Rank link copied: " + url;
+    }).catch(() => window.prompt("Copy this rank link:", url));
+  } else {
+    window.prompt("Copy this rank link:", url);
+  }
+}
+function buyCurrentRank(){
+  if (!currentRank) return;
+  const url = String(currentRank.checkoutUrl || "").trim();
+  const note = document.getElementById("rankModalNote");
+  if (!/^https?:\/\//i.test(url)) {
+    note.textContent = "No payment link is connected for " + currentRank.name + " yet. To enable buying, add that rank's own direct checkout URL to its checkoutUrl field in RANKS. You do not need one shared store URL.";
+    note.classList.add("is-warning");
     return;
   }
-  const base = STORE_URL.replace(/\/$/, "");
-  window.open(base + "?item=" + encodeURIComponent(item), "_blank", "noopener,noreferrer");
+  window.open(url, "_blank", "noopener,noreferrer");
 }
+function syncRankModalToUrl(){
+  const match = window.location.hash.match(/^#rank-([a-z0-9-]+)$/i);
+  if (match) openStore(match[1], false);
+  else if (!document.getElementById("rankModal").hidden) closeRankModal(false);
+}
+window.addEventListener("popstate", syncRankModalToUrl);
+window.addEventListener("hashchange", syncRankModalToUrl);
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && !document.getElementById("rankModal").hidden) closeRankModal();
+});
 async function copyServerAddress(){
   if (!SERVER_ADDRESS || SERVER_ADDRESS.includes("YOUR.SERVER.IP")) {
     alert("Set SERVER_ADDRESS near the bottom of index.html to your real Minecraft server address first.");
@@ -266,6 +465,10 @@ const observer = new IntersectionObserver(entries => entries.forEach(entry => {
 }), {threshold:.10});
 document.querySelectorAll(".reveal").forEach(element => observer.observe(element));
 document.getElementById("year").textContent = new Date().getFullYear();
+renderRanks();
+renderStaff();
+const initialRank = window.location.hash.match(/^#rank-([a-z0-9-]+)$/i);
+if (initialRank) openStore(initialRank[1], false);
 refreshStats();
 setInterval(refreshStats, 15000);
 </script>
