@@ -29,13 +29,16 @@
 @media(max-width:640px){.wrap{width:calc(100% - 28px)}.nav{height:62px}.navlinks{gap:13px;overflow:auto;white-space:nowrap;max-width:calc(100vw - 170px);scrollbar-width:none}.navlinks::-webkit-scrollbar{display:none}.navlinks a{font-size:11px}.nav-actions{display:none}.hero{grid-template-columns:1fr;padding-top:43px;padding-bottom:30px;gap:25px}.hero h1{font-size:clamp(42px,12vw,64px)}.hero-copy p{font-size:14px}.hero-art{min-height:240px}.hero-minecart{width:min(68%,240px)}.quick-stats{grid-template-columns:repeat(2,1fr)}.quick-stat:nth-child(2){border-right:0}.quick-stat:nth-child(-n+2){border-bottom:1px solid #303035}.quick-stat strong{font-size:20px}.section{padding:46px 0}.section-head{align-items:flex-start;flex-direction:column;gap:8px}.section-note{text-align:left}.store-banner{align-items:flex-start;flex-direction:column}.store-grid{grid-template-columns:1fr}.product{display:grid;grid-template-columns:115px minmax(0,1fr)}.product-visual{height:auto;min-height:170px;border-bottom:0;border-right:1px solid #303035}.product-img{width:78px;height:78px}.product-body{padding:15px 13px}.product h3{font-size:17px}.product p{font-size:11px;min-height:0}.product-foot{align-items:flex-start;flex-direction:column;gap:11px}.product .btn{width:100%}.rank-price{font-size:16px}.staff-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.staff-card{padding:14px}.cta-panel{align-items:flex-start;flex-direction:column;padding:22px}.cta-actions{width:100%}.cta-actions .btn{flex:1}.footer-main,.footer-note{align-items:flex-start;flex-direction:column}.footer-links{gap:12px}}
 @media(max-width:390px){.navlinks{max-width:calc(100vw - 145px);gap:10px}.navlinks a{font-size:10px}.hero-actions .btn{flex:1}.modes-grid{grid-template-columns:1fr}.staff-grid{grid-template-columns:1fr}.staff-card{display:grid;grid-template-columns:60px 1fr;column-gap:12px}.staff-top{grid-column:1/-1}.skin-frame{grid-row:2/5;height:auto;margin:12px 0 0}.staff-skin{width:52px;height:52px}.staff-name,.staff-hint,.staff-desc{grid-column:2}.staff-desc{margin-top:5px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+.account-panel{display:grid;grid-template-columns:.85fr 1.15fr;gap:26px;padding:24px;background:var(--surface);border:1px solid var(--line);border-radius:12px}.account-panel h3{font-size:20px;letter-spacing:-.035em;margin:0 0 8px}.account-panel p{color:var(--muted);font-size:13px;line-height:1.7;margin:0}.account-state{display:inline-flex;align-items:center;gap:8px;margin-top:15px;padding:7px 10px;border:1px solid #38383d;border-radius:7px;background:#202024;color:#bdbdc4;font-size:11px}.account-state:before{content:"";width:7px;height:7px;border-radius:50%;background:#8b8b93}.account-state.is-linked{color:#8de2ad;border-color:#31533e;background:#17251b}.account-state.is-linked:before{background:var(--green);box-shadow:0 0 8px #69dca080}.account-controls{min-width:0}.link-form{display:flex;gap:9px}.link-form input,.queue-kit-select{width:100%;min-width:0;min-height:43px;padding:0 12px;color:var(--text);background:#101012;border:1px solid #39393f;border-radius:8px;outline:none}.link-form input:focus,.queue-kit-select:focus{border-color:#a64a51;box-shadow:0 0 0 3px #ef334014}.link-form input{text-transform:uppercase;letter-spacing:.14em;font-family:var(--mono)}.link-form button{white-space:nowrap}.link-help{font-size:11px!important;color:#85858d!important;margin-top:8px!important}.linked-controls{margin-top:12px}.linked-name{margin-bottom:12px!important;color:#dedee2!important}.linked-name strong{color:#fff}.queue-controls{display:grid;grid-template-columns:1fr 1fr;gap:9px}.queue-controls .queue-kit-select{grid-column:1/-1}.queue-controls .btn{width:100%}.action-status{min-height:22px;margin-top:12px!important;color:#b6b6bd!important;font-size:11px!important}.action-status.is-error{color:#ff9aa1!important}.action-status.is-success{color:#8de2ad!important}.account-warning{font-size:11px!important;color:#8b858b!important;margin-top:14px!important}.account-warning code{color:#f0c1c4;background:#292024;padding:2px 4px;border-radius:4px}
+@media(max-width:760px){.account-panel{grid-template-columns:1fr;padding:19px;gap:18px}.link-form{flex-direction:column}.link-form button{width:100%}}
 </style>
 </head>
 <body>
 <header class="top">
   <nav class="nav wrap" aria-label="Main navigation">
     <a class="brand" href="#home" aria-label="CartPrac home"><span class="brand-mark"><img src="./server-icon.png" alt="" width="36" height="36"></span><span>Cart<em>Prac</em></span></a>
-    <div class="navlinks"><a href="#modes">Modes</a><a href="#leaderboard">Rankings</a><a href="#store">Store</a><a href="#staff">Staff</a></div>
+    <div class="navlinks"><a href="#modes">Modes</a><a href="#leaderboard">Rankings</a><a href="#store">Store</a><a href="#account">Account</a><a href="#staff">Staff</a></div>
     <div class="nav-actions"><a class="nav-discord" href="https://discord.gg/P7HC6V8Pnk" target="_blank" rel="noopener noreferrer">Join Discord ↗</a></div>
   </nav>
 </header>
@@ -62,6 +65,36 @@
       <div class="quick-stat"><span class="label">Network status</span><strong class="status-text" id="status">CONNECTING</strong><span class="foot" id="statusNote">Checking server connection</span></div>
     </div>
   </section>
+  <section id="account" class="section wrap">
+    <div class="section-head"><div><div class="section-kicker">CartPrac web connection</div><h2 class="section-title">Your <span>account</span></h2></div><div class="section-note">Link your Minecraft account to queue from the website.</div></div>
+    <div class="account-panel">
+      <div>
+        <h3>Connect your Minecraft account</h3>
+        <p>Join CartPrac in-game and run <code>/cartpraclink</code>. Enter the one-time code here. The code expires after five minutes.</p>
+        <div id="accountState" class="account-state">Not linked</div>
+        <p class="account-warning">Queue actions work only while your linked Minecraft account is online. Your website session token stays in this browser and is never the server plugin token.</p>
+      </div>
+      <div class="account-controls">
+        <form id="linkForm" class="link-form">
+          <input id="pairCode" name="pairCode" type="text" maxlength="8" minlength="8" autocomplete="one-time-code" autocapitalize="characters" placeholder="8-CHARACTER CODE" aria-label="Minecraft link code" required>
+          <button class="btn btn-primary" type="submit">Link account</button>
+        </form>
+        <p class="link-help">Code generated by <code>/cartpraclink</code> in Minecraft.</p>
+        <div id="linkedControls" class="linked-controls" hidden>
+          <p class="linked-name">Connected as <strong id="linkedPlayerName">Minecraft player</strong></p>
+          <div class="queue-controls">
+            <select id="queueKitSelect" class="queue-kit-select" aria-label="Choose a queue kit"><option value="">Loading server kits…</option></select>
+            <button id="queueJoinButton" class="btn btn-primary" type="button">Join queue</button>
+            <button id="queueLeaveButton" class="btn" type="button">Leave queue</button>
+            <button id="profileRefreshButton" class="btn" type="button">Sync profile</button>
+            <button id="disconnectButton" class="btn btn-quiet" type="button">Disconnect</button>
+          </div>
+        </div>
+        <p id="webActionStatus" class="action-status" role="status" aria-live="polite">Not connected yet.</p>
+      </div>
+    </div>
+  </section>
+  <div class="section-line"></div>
   <section id="modes" class="section wrap">
     <div class="section-head"><div><div class="section-kicker">Find your next match</div><h2 class="section-title">Game <span>modes</span></h2></div><div class="section-note">Choose an arena and get straight into the action.</div></div>
     <div class="modes-grid">
@@ -74,7 +107,7 @@
   <div class="section-line"></div>
   <section id="leaderboard" class="section wrap">
     <div class="section-head"><div><div class="section-kicker">Community competition</div><h2 class="section-title">Top <span>players</span></h2></div><div class="section-note">The leaderboard updates automatically when connected to the CartPrac API.</div></div>
-    <div class="board-panel"><div class="panel-head"><span class="panel-label">Global rankings</span><span class="live-label">Live data</span></div><div class="table-scroll"><table><thead><tr><th>#</th><th>Player</th><th>Wins</th><th>Losses</th><th>Rating</th></tr></thead><tbody id="board"><tr><td class="rank">—</td><td><div class="player-cell"><span class="player-head">?</span><span>Waiting for server…</span></div></td><td>—</td><td>—</td><td class="rating">—</td></tr></tbody></table></div></div>
+    <div class="board-panel"><div class="panel-head"><span class="panel-label">Global rankings</span><span class="live-label">Live data</span></div><div class="table-scroll"><table><thead><tr><th>#</th><th>Player</th><th>Wins</th><th>Losses</th><th>K/D</th></tr></thead><tbody id="board"><tr><td class="rank">—</td><td><div class="player-cell"><span class="player-head">?</span><span>Waiting for server…</span></div></td><td>—</td><td>—</td><td class="rating">—</td></tr></tbody></table></div></div>
   </section>
   <section id="store" class="section wrap">
     <div class="section-head"><div><div class="section-kicker">Official CartPrac shop</div><h2 class="section-title">Choose your <span>rank</span></h2></div><div class="section-note">Explore each rank to see its perks and purchase information.</div></div>
@@ -112,9 +145,9 @@ const DISCORD_INVITE = "https://discord.gg/P7HC6V8Pnk";
 
 /* Edit each rank below. Add its own checkoutUrl once you have a real payment page. */
 const RANKS = [
-  {id:"TNTCART",name:"TNTCART",badge:"STARTER RANK",price:100,currency:"Toman",item:"tnt_minecart.png",description:"Your first step into the CartPrac ranks. A clean supporter tier for players who want to represent the network.",perks:["TNTCART rank tag","Rank displayed in chat and player list","Supporter cosmetics when enabled on the server"],checkoutUrl:"",detailsUrl:""},
-  {id:"MARILIYA",name:"MARILIYA",badge:"POPULAR",price:200,currency:"Toman",item:"crossbow.png",description:"A more premium CartPrac identity for regular players who want their name to stand out.",perks:["MARILIYA rank tag","Extra chat styling when available","Cosmetics when enabled on the server"],checkoutUrl:"",detailsUrl:""},
-  {id:"EXPLOSIVE",name:"EXPLOSIVE",badge:"TOP TIER",price:275,currency:"Toman",item:"tnt.png",description:"The top supporter tier concept for players who want the full premium CartPrac look.",perks:["EXPLOSIVE rank tag","Premium supporter identity","Premium cosmetics when enabled on the server"],checkoutUrl:"",detailsUrl:""}
+  {id:"TNTCART",name:"TNTCART",badge:"STARTER RANK",price:100,currency:"Toman",item:"tnt_minecart.png",description:"A starter supporter tier with access to the cosmetics hub and kill-effect cosmetics.",perks:["Access to the cosmetics menu","Kill-effect cosmetics"],checkoutUrl:"",detailsUrl:""},
+  {id:"MARILIYA",name:"MARILIYA",badge:"POPULAR",price:200,currency:"Toman",item:"crossbow.png",description:"A stronger cosmetic package with kill effects and customizable messages after a kill.",perks:["Access to the cosmetics menu","Kill-effect cosmetics","Kill-message cosmetics"],checkoutUrl:"",detailsUrl:""},
+  {id:"EXPLOSIVE",name:"EXPLOSIVE",badge:"TOP TIER",price:275,currency:"Toman",item:"tnt.png",description:"The full cosmetic package currently configured for CartPrac.",perks:["Access to the cosmetics menu","Kill-effect cosmetics","Kill-message cosmetics","Item-name cosmetics","Armor-trim cosmetics"],checkoutUrl:"",detailsUrl:""}
 ];
 const STAFF = [
   {name:"ItsKingBoy",skin:"ItsKingBoy",role:"OWNER",subtitle:"NETWORK FOUNDER",description:"The person with the vision — and the final say on the network."},
@@ -136,8 +169,46 @@ function syncRankModalToUrl(){const match=window.location.hash.match(/^#rank-([a
 window.addEventListener("popstate",syncRankModalToUrl);window.addEventListener("hashchange",syncRankModalToUrl);document.addEventListener("keydown",event=>{if(event.key==="Escape"&&!document.getElementById("rankModal").hidden)closeRankModal()});
 async function copyServerAddress(){try{await navigator.clipboard.writeText(SERVER_ADDRESS);const chip=document.getElementById("serverAddressText");const original=chip.textContent;chip.textContent="Copied!";setTimeout(()=>chip.textContent=original,1600)}catch{window.prompt("Copy your CartPrac server address:",SERVER_ADDRESS)}}
 function openCommunity(){if(DISCORD_INVITE)window.open(DISCORD_INVITE,"_blank","noopener,noreferrer")}
-async function refreshStats(){const status=document.getElementById("status"),note=document.getElementById("statusNote");if(!API_BASE||API_BASE.includes("YOUR-WORKER")){status.textContent="NOT CONNECTED";status.style.color="var(--muted)";note.textContent="Stats API not configured";return}try{const response=await fetch(API_BASE+"/api/stats",{cache:"no-store"});if(!response.ok)throw new Error("Stats API returned "+response.status);const data=await response.json();document.getElementById("players").textContent=data.playersOnline??"0";document.getElementById("matches").textContent=data.activeMatches??"0";document.getElementById("queue").textContent=data.queueSize??"0";status.textContent=data.online?"ONLINE":"OFFLINE";status.style.color=data.online?"var(--green)":"#ef737b";note.textContent=data.online?"Server responding":"Server not responding";if(Array.isArray(data.leaderboard)){const board=document.getElementById("board");board.replaceChildren();const rows=data.leaderboard.slice(0,10);if(!rows.length){const tr=document.createElement("tr");tr.innerHTML='<td colspan="5" style="color:#85858d;padding:22px">No leaderboard data yet.</td>';board.appendChild(tr)}else rows.forEach((player,index)=>{const tr=document.createElement("tr");const safeName=escapeHtml(player.name??"Unknown");const initials=escapeHtml(String(player.name??"?").slice(0,1).toUpperCase());tr.innerHTML=`<td class="rank">${String(index+1).padStart(2,"0")}</td><td><div class="player-cell"><span class="player-head">${initials}</span><span>${safeName}</span></div></td><td class="win">${Number(player.wins??0)}</td><td>${Number(player.losses??0)}</td><td class="rating">${Number(player.elo??1000).toLocaleString()}</td>`;board.appendChild(tr)})}}catch{status.textContent="OFFLINE";status.style.color="#ef737b";note.textContent="Stats API unreachable"}}
-const year=document.getElementById("year");year.textContent=new Date().getFullYear();document.getElementById("serverAddressText").textContent=SERVER_ADDRESS;renderRanks();renderStaff();const initialRank=window.location.hash.match(/^#rank-([a-z0-9-]+)$/i);if(initialRank)openStore(initialRank[1],false);refreshStats();setInterval(refreshStats,15000);
+async function refreshStats(){
+  const status=document.getElementById("status"),note=document.getElementById("statusNote");
+  if(!API_BASE||API_BASE.includes("YOUR-WORKER")){status.textContent="NOT CONNECTED";status.style.color="var(--muted)";note.textContent="Stats API not configured";return}
+  try{
+    const response=await fetch(API_BASE+"/api/stats",{cache:"no-store"});
+    if(!response.ok)throw new Error("Stats API returned "+response.status);
+    const data=await response.json();
+    document.getElementById("players").textContent=data.playersOnline??"0";
+    document.getElementById("matches").textContent=data.activeMatches??"0";
+    document.getElementById("queue").textContent=data.queueSize??"0";
+    status.textContent=data.online?"ONLINE":"OFFLINE";status.style.color=data.online?"var(--green)":"#ef737b";
+    note.textContent=data.online?"Server responding":"Server not responding";
+    if(Array.isArray(data.availableKits))setQueueKitOptions(data.availableKits);
+    if(Array.isArray(data.leaderboard)){
+      const board=document.getElementById("board");board.replaceChildren();const rows=data.leaderboard.slice(0,10);
+      if(!rows.length){const tr=document.createElement("tr");tr.innerHTML='<td colspan="5" style="color:#85858d;padding:22px">No leaderboard data yet.</td>';board.appendChild(tr)}
+      else rows.forEach((player,index)=>{const tr=document.createElement("tr");const safeName=escapeHtml(player.name??"Unknown");const initials=escapeHtml(String(player.name??"?").slice(0,1).toUpperCase());const kills=Number(player.kills??0),deaths=Number(player.deaths??0);const kd=(deaths===0?kills:kills/deaths).toFixed(2);tr.innerHTML=`<td class="rank">${String(index+1).padStart(2,"0")}</td><td><div class="player-cell"><span class="player-head">${initials}</span><span>${safeName}</span></div></td><td class="win">${Number(player.wins??0)}</td><td>${Number(player.losses??0)}</td><td class="rating">${kd}</td>`;board.appendChild(tr)})
+    }
+  }catch{status.textContent="OFFLINE";status.style.color="#ef737b";note.textContent="Stats API unreachable"}
+}
+
+const SESSION_KEY="cartprac_web_session";
+function getWebToken(){try{return localStorage.getItem(SESSION_KEY)||""}catch{return ""}}
+function setWebToken(value){try{if(value)localStorage.setItem(SESSION_KEY,value);else localStorage.removeItem(SESSION_KEY)}catch{}}
+function setAccountStatus(message,isLinked=false){const state=document.getElementById("accountState");state.textContent=message;state.classList.toggle("is-linked",isLinked)}
+function setWebActionStatus(message,type=""){const node=document.getElementById("webActionStatus");node.textContent=message;node.classList.toggle("is-error",type==="error");node.classList.toggle("is-success",type==="success")}
+function setQueueKitOptions(kits){const select=document.getElementById("queueKitSelect");if(!select)return;const old=select.value;select.replaceChildren();if(!kits.length){const option=document.createElement("option");option.value="";option.textContent="No kits available while offline";select.appendChild(option);return}for(const kit of kits){if(typeof kit!=="string"||!kit.trim())continue;const option=document.createElement("option");option.value=kit;option.textContent=kit;select.appendChild(option)}if([...select.options].some(option=>option.value===old))select.value=old}
+async function webFetch(path,options={}){const headers={...(options.headers||{})};if(options.body!==undefined)headers["Content-Type"]="application/json";const token=getWebToken();if(token)headers.Authorization="Bearer "+token;const response=await fetch(API_BASE+path,{...options,headers,cache:"no-store"});let data={};try{data=await response.json()}catch{}if(!response.ok)throw new Error(data.error||("Request failed ("+response.status+")"));return data}
+function showLinkedAccount(name){document.getElementById("linkedControls").hidden=false;document.getElementById("linkForm").hidden=true;document.getElementById("linkedPlayerName").textContent=name||"Minecraft player";setAccountStatus("Linked to Minecraft",true);setWebActionStatus("Your website account is connected.","success")}
+function showUnlinkedAccount(){document.getElementById("linkedControls").hidden=true;document.getElementById("linkForm").hidden=false;document.getElementById("linkedPlayerName").textContent="Minecraft player";setAccountStatus("Not linked",false)}
+async function loadWebsiteSession(){const token=getWebToken();if(!token){showUnlinkedAccount();return}try{const data=await webFetch("/api/web/me");showLinkedAccount(data.playerName)}catch{setWebToken("");showUnlinkedAccount();setWebActionStatus("Your session expired or is invalid. Generate a new link code.","error")}}
+document.getElementById("linkForm").addEventListener("submit",async event=>{event.preventDefault();const code=document.getElementById("pairCode").value.trim().toUpperCase();if(!/^[A-Z0-9]{8}$/.test(code)){setWebActionStatus("Enter the full 8-character code from Minecraft.","error");return}const button=event.submitter; if(button){button.disabled=true;button.textContent="Linking…"}try{const data=await fetch(API_BASE+"/api/web/link",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({code}),cache:"no-store"});let result={};try{result=await data.json()}catch{}if(!data.ok)throw new Error(result.error||"Could not link the account.");setWebToken(result.token);document.getElementById("pairCode").value="";showLinkedAccount(result.playerName);await refreshStats()}catch(error){setWebActionStatus(error.message||"Could not link the account.","error")}finally{if(button){button.disabled=false;button.textContent="Link account"}}});
+async function submitWebAction(action){if(!getWebToken()){showUnlinkedAccount();setWebActionStatus("Link your Minecraft account first.","error");return}const labels={queue_join:"Joining queue…",queue_leave:"Leaving queue…",profile_refresh:"Syncing profile…"};setWebActionStatus(labels[action]||"Sending request…");for(const button of document.querySelectorAll("#linkedControls button"))button.disabled=true;try{const body={action};if(action==="queue_join"){body.kit=document.getElementById("queueKitSelect").value;if(!body.kit)throw new Error("No queue kit is available right now.")}const result=await webFetch("/api/web/commands",{method:"POST",body:JSON.stringify(body)});if(!result.commandId)throw new Error("The API did not return an action ID.");await waitForWebCommand(result.commandId)}catch(error){setWebActionStatus(error.message||"The action failed.","error")}finally{for(const button of document.querySelectorAll("#linkedControls button"))button.disabled=false}}
+async function waitForWebCommand(id){for(let attempt=0;attempt<24;attempt++){await new Promise(resolve=>setTimeout(resolve,2000));try{const result=await webFetch("/api/web/commands/"+encodeURIComponent(id));if(result.status==="done"){setWebActionStatus(result.result||"Action completed.","success");return}if(result.status==="failed"){setWebActionStatus(result.result||"The plugin rejected the action.","error");return}}catch(error){setWebActionStatus(error.message||"Could not check action status.","error");return}}setWebActionStatus("Still waiting for the Minecraft server. Check that the plugin bridge is online.","error")}
+document.getElementById("queueJoinButton").addEventListener("click",()=>submitWebAction("queue_join"));
+document.getElementById("queueLeaveButton").addEventListener("click",()=>submitWebAction("queue_leave"));
+document.getElementById("profileRefreshButton").addEventListener("click",()=>submitWebAction("profile_refresh"));
+document.getElementById("disconnectButton").addEventListener("click",()=>{setWebToken("");showUnlinkedAccount();setWebActionStatus("Disconnected this browser from the Minecraft account.")});
+
+const year=document.getElementById("year");year.textContent=new Date().getFullYear();document.getElementById("serverAddressText").textContent=SERVER_ADDRESS;renderRanks();renderStaff();const initialRank=window.location.hash.match(/^#rank-([a-z0-9-]+)$/i);if(initialRank)openStore(initialRank[1],false);refreshStats();loadWebsiteSession();setInterval(refreshStats,15000);
 </script>
 </body>
 </html>
