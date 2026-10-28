@@ -32,13 +32,28 @@
 
 .account-panel{display:grid;grid-template-columns:.85fr 1.15fr;gap:26px;padding:24px;background:var(--surface);border:1px solid var(--line);border-radius:12px}.account-panel h3{font-size:20px;letter-spacing:-.035em;margin:0 0 8px}.account-panel p{color:var(--muted);font-size:13px;line-height:1.7;margin:0}.account-state{display:inline-flex;align-items:center;gap:8px;margin-top:15px;padding:7px 10px;border:1px solid #38383d;border-radius:7px;background:#202024;color:#bdbdc4;font-size:11px}.account-state:before{content:"";width:7px;height:7px;border-radius:50%;background:#8b8b93}.account-state.is-linked{color:#8de2ad;border-color:#31533e;background:#17251b}.account-state.is-linked:before{background:var(--green);box-shadow:0 0 8px #69dca080}.account-controls{min-width:0}.link-form{display:flex;gap:9px}.link-form input,.queue-kit-select{width:100%;min-width:0;min-height:43px;padding:0 12px;color:var(--text);background:#101012;border:1px solid #39393f;border-radius:8px;outline:none}.link-form input:focus,.queue-kit-select:focus{border-color:#a64a51;box-shadow:0 0 0 3px #ef334014}.link-form input{text-transform:uppercase;letter-spacing:.14em;font-family:var(--mono)}.link-form button{white-space:nowrap}.link-help{font-size:11px!important;color:#85858d!important;margin-top:8px!important}.linked-controls{margin-top:12px}.linked-name{margin-bottom:12px!important;color:#dedee2!important}.linked-name strong{color:#fff}.queue-controls{display:grid;grid-template-columns:1fr 1fr;gap:9px}.queue-controls .queue-kit-select{grid-column:1/-1}.queue-controls .btn{width:100%}.action-status{min-height:22px;margin-top:12px!important;color:#b6b6bd!important;font-size:11px!important}.action-status.is-error{color:#ff9aa1!important}.action-status.is-success{color:#8de2ad!important}.account-warning{font-size:11px!important;color:#8b858b!important;margin-top:14px!important}.account-warning code{color:#f0c1c4;background:#292024;padding:2px 4px;border-radius:4px}
 @media(max-width:760px){.account-panel{grid-template-columns:1fr;padding:19px;gap:18px}.link-form{flex-direction:column}.link-form button{width:100%}}
+
+/* Staff roles and special thanks */
+.role.founder{color:var(--gold);background:#2a251a;border-color:#51452b}
+.thanks-section{padding-top:18px}
+.thanks-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.thanks-card{display:flex;align-items:flex-start;gap:12px;min-width:0;padding:15px;background:linear-gradient(145deg,#19191c,#151517);border:1px solid #303035;border-radius:11px;transition:transform .18s,border-color .18s}
+.thanks-card:hover{transform:translateY(-2px);border-color:#584047}
+.thanks-mark{width:38px;height:38px;flex:none;display:grid;place-items:center;border-radius:9px;background:linear-gradient(145deg,#422126,#21181b);border:1px solid #5a363b;color:#ffd9dc;font-size:11px;font-weight:900;letter-spacing:.02em}
+.thanks-copy{min-width:0}
+.thanks-copy h3{margin:1px 0 5px;font-size:12px;font-weight:850;overflow-wrap:anywhere}
+.thanks-copy p{margin:0;color:#9998a0;font-size:10px;line-height:1.6}
+@media(max-width:900px){.thanks-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:640px){.thanks-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.thanks-card{padding:12px;gap:9px}.thanks-mark{width:32px;height:32px}}
+@media(max-width:390px){.thanks-grid{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
 <header class="top">
   <nav class="nav wrap" aria-label="Main navigation">
     <a class="brand" href="#home" aria-label="CartPrac home"><span class="brand-mark"><img src="./server-icon.png" alt="" width="36" height="36"></span><span>Cart<em>Prac</em></span></a>
-    <div class="navlinks"><a href="#modes">Modes</a><a href="#leaderboard">Rankings</a><a href="#store">Store</a><a href="#account">Account</a><a href="#staff">Staff</a></div>
+    <div class="navlinks"><a href="#modes">Modes</a><a href="#leaderboard">Rankings</a><a href="#store">Store</a><a href="#account">Account</a><a href="#staff">Staff</a><a href="#thanks">Thanks</a></div>
     <div class="nav-actions"><a class="nav-discord" href="https://discord.gg/P7HC6V8Pnk" target="_blank" rel="noopener noreferrer">Join Discord ↗</a></div>
   </nav>
 </header>
@@ -119,11 +134,15 @@
     <div class="section-head"><div><div class="section-kicker">The people behind the network</div><h2 class="section-title">Meet the <span>staff</span></h2></div><div class="section-note">Here to keep the network helpful, fair and running smoothly.</div></div>
     <div class="staff-grid" id="staffGrid" aria-live="polite"></div>
   </section>
+  <section id="thanks" class="section wrap thanks-section">
+    <div class="section-head"><div><div class="section-kicker">A little appreciation</div><h2 class="section-title">Special <span>thanks</span></h2></div><div class="section-note">CartPrac is made better by the people who support it.</div></div>
+    <div class="thanks-grid" id="thanksGrid" aria-live="polite"></div>
+  </section>
   <section id="play" class="section wrap">
     <div class="cta-panel"><div><h2>Ready to join <span>CartPrac?</span></h2><p>Copy the server address, jump in and start practising. Join the community for news, support and updates.</p></div><div class="cta-actions"><button class="btn btn-primary" type="button" onclick="copyServerAddress()">Copy IP ⧉</button><button class="btn" type="button" onclick="openCommunity()">Discord ↗</button></div></div>
   </section>
 </main>
-<footer class="footer"><div class="wrap"><div class="footer-main"><div class="footer-brand-row"><img class="footer-icon" src="./server-icon.png" alt="" width="30" height="30"><div><div class="footer-brand">CartPrac Network</div><div class="footer-small">Minecraft practice · Community · Competition</div></div></div><div class="footer-links"><a href="#modes">Modes</a><a href="#store">Store</a><a href="#staff">Staff</a><a href="#leaderboard">Rankings</a><a href="https://discord.gg/P7HC6V8Pnk" target="_blank" rel="noopener noreferrer">Discord ↗</a></div></div><div class="footer-note"><span>© <span id="year"></span> CartPrac. All rights reserved.</span><span>Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</span></div></div></footer>
+<footer class="footer"><div class="wrap"><div class="footer-main"><div class="footer-brand-row"><img class="footer-icon" src="./server-icon.png" alt="" width="30" height="30"><div><div class="footer-brand">CartPrac Network</div><div class="footer-small">Minecraft practice · Community · Competition</div></div></div><div class="footer-links"><a href="#modes">Modes</a><a href="#store">Store</a><a href="#staff">Staff</a><a href="#thanks">Special thanks</a><a href="#leaderboard">Rankings</a><a href="https://discord.gg/P7HC6V8Pnk" target="_blank" rel="noopener noreferrer">Discord ↗</a></div></div><div class="footer-note"><span>© <span id="year"></span> CartPrac. All rights reserved.</span><span>Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</span></div></div></footer>
 <div class="rank-modal" id="rankModal" hidden>
   <div class="rank-modal-backdrop" onclick="closeRankModal()" aria-hidden="true"></div>
   <section class="rank-dialog" role="dialog" aria-modal="true" aria-labelledby="modalRankName">
@@ -150,17 +169,37 @@ const RANKS = [
   {id:"EXPLOSIVE",name:"EXPLOSIVE",badge:"TOP TIER",price:275,currency:"Toman",item:"tnt.png",description:"The full cosmetic package currently configured for CartPrac.",perks:["Access to the cosmetics menu","Kill-effect cosmetics","Kill-message cosmetics","Item-name cosmetics","Armor-trim cosmetics"],checkoutUrl:"",detailsUrl:""}
 ];
 const STAFF = [
-  {name:"ItsKingBoy",skin:"ItsKingBoy",role:"OWNER",subtitle:"NETWORK FOUNDER",description:"The person with the vision — and the final say on the network."},
-  {name:"RedAwaken",skin:"RedAwaken",role:"ADMIN",subtitle:"NETWORK OPERATIONS",description:"Keeps systems organized, fair and running smoothly."},
-  {name:"BoyCuddler",skin:"Asztere",role:"MODERATOR",subtitle:"PLAYER SUPPORT",description:"Helps players, handles reports and protects the community."},
-  {name:"SadMile",skin:"SadMile_",role:"BUILDER",subtitle:"WORLD DESIGN",description:"Shapes the arenas and details that give CartPrac its identity."}
+  {name:"RedAwaken",skin:"RedAwaken",role:"FOUNDER",subtitle:"NETWORK FOUNDER",description:"Founded CartPrac and leads the network."},
+  {name:"ItsKingBoy",skin:"ItsKingBoy",role:"DEVELOPER",subtitle:"PLUGIN & SYSTEMS",description:"Develops and maintains the systems that power CartPrac."},
+  // Display/skin username is SadMile. Keep the permissions account separate; it is not his public display name.
+  {name:"SadMile",skin:"SadMile",permissionAccount:"SadMile_*",role:"BUILDER",subtitle:"ARENA & WORLD DESIGN",description:"Builds the arenas and spaces where CartPrac players compete."}
+];
+const SPECIAL_THANKS = [
+  {name:"BoyCuddler",mark:"BC",note:"With appreciation for being part of the CartPrac community."},
+  {name:"obitachi",mark:"OB",note:"Thank you for supporting the CartPrac journey."},
+  {name:"_*K4wa",mark:"K4",note:"Thank you for being part of the community."},
+  {name:"hosenaqa",mark:"HQ",note:"Thank you for supporting CartPrac."},
+  {name:"SadMile",mark:"SM",note:"Special thanks to our builder for bringing the arenas to life."}
 ];
 
 function escapeHtml(value){return String(value).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function formatPrice(rank){const amount=Number(rank.price||0);if(String(rank.currency||"").toLowerCase()==="toman")return amount.toLocaleString("en-US")+" تومان";try{return new Intl.NumberFormat("en-US",{style:"currency",currency:rank.currency||"USD"}).format(amount)}catch{return amount.toLocaleString("en-US")+" "+String(rank.currency||"")}}
 function renderRanks(){const grid=document.getElementById("storeGrid");if(!grid)return;grid.replaceChildren();RANKS.forEach((rank,index)=>{const card=document.createElement("article");card.className="product"+(index===1?" featured":"");card.tabIndex=0;card.setAttribute("role","button");card.setAttribute("aria-label","View "+rank.name+" rank details");const imageName=rank.item||"tnt_minecart.png";const imageURL="https://blockrender.dev/render/item/"+encodeURIComponent(imageName)+"?size=256";card.innerHTML=`<div class="product-visual"><span class="product-ribbon">${escapeHtml(rank.badge||"CARTPRAC RANK")}</span><img class="product-img" src="${imageURL}" alt="Minecraft item for ${escapeHtml(rank.name)}" loading="lazy" onerror="this.onerror=null;this.src='https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/74/Minecart_with_TNT_JE2_BE2.png/revision/latest?cb=20191220092620';this.onerror=function(){this.style.visibility='hidden'}"></div><div class="product-body"><div class="product-category">CartPrac rank · ${String(index+1).padStart(2,"0")}</div><h3>${escapeHtml(rank.name)}</h3><p>${escapeHtml(rank.description||"CartPrac supporter rank.")}</p><div class="product-foot"><div><div class="rank-price">${escapeHtml(formatPrice(rank))}</div><span class="price-unit">One-time price</span></div><button class="btn ${index===1?"btn-primary":""} btn-small" type="button">View rank ↗</button></div></div>`;card.addEventListener("click",()=>openStore(rank.id));card.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();openStore(rank.id)}});grid.appendChild(card)});}
-function renderStaff(){const grid=document.getElementById("staffGrid");if(!grid)return;grid.replaceChildren();STAFF.forEach(member=>{const role=String(member.role||"STAFF").toUpperCase();const owner=role==="OWNER";const username=String(member.skin||member.name||"Steve").trim();const headURL="https://mc-heads.net/avatar/"+encodeURIComponent(username)+"/96";const card=document.createElement("article");card.className="staff-card";const initials=escapeHtml(String(member.name||"?").slice(0,2).toUpperCase());card.innerHTML=`<div class="staff-top"><span class="role ${owner?"owner":""}">${escapeHtml(role)}</span><span class="staff-status" title="Team member"></span></div><div class="skin-frame"><img class="staff-skin" src="${headURL}" alt="Minecraft head of ${escapeHtml(member.name||"staff member")}" loading="lazy" onerror="this.outerHTML='<span class=\'player-head\' aria-hidden=\'true\'>${initials}</span>'"></div><h3 class="staff-name">${escapeHtml(member.name||"Staff member")}</h3><div class="staff-hint">${escapeHtml(member.subtitle||"CARTPRAC TEAM")}</div><p class="staff-desc">${escapeHtml(member.description||"Part of the CartPrac team.")}</p>`;grid.appendChild(card)});}
+function renderStaff(){const grid=document.getElementById("staffGrid");if(!grid)return;grid.replaceChildren();STAFF.forEach(member=>{const role=String(member.role||"STAFF").toUpperCase();const owner=role==="OWNER"||role==="FOUNDER";const username=String(member.skin||member.name||"Steve").trim();const headURL="https://mc-heads.net/avatar/"+encodeURIComponent(username)+"/96";const card=document.createElement("article");card.className="staff-card";const initials=escapeHtml(String(member.name||"?").slice(0,2).toUpperCase());card.innerHTML=`<div class="staff-top"><span class="role ${owner?"owner":""}">${escapeHtml(role)}</span><span class="staff-status" title="Team member"></span></div><div class="skin-frame"><img class="staff-skin" src="${headURL}" alt="Minecraft head of ${escapeHtml(member.name||"staff member")}" loading="lazy" onerror="this.outerHTML='<span class=\'player-head\' aria-hidden=\'true\'>${initials}</span>'"></div><h3 class="staff-name">${escapeHtml(member.name||"Staff member")}</h3><div class="staff-hint">${escapeHtml(member.subtitle||"CARTPRAC TEAM")}</div><p class="staff-desc">${escapeHtml(member.description||"Part of the CartPrac team.")}</p>`;grid.appendChild(card)});}
 let currentRank=null;
+
+function renderThanks(){
+  const grid=document.getElementById("thanksGrid");
+  if(!grid)return;
+  grid.replaceChildren();
+  SPECIAL_THANKS.forEach(person=>{
+    const card=document.createElement("article");
+    card.className="thanks-card";
+    card.innerHTML=`<div class="thanks-mark" aria-hidden="true">${escapeHtml(person.mark||String(person.name||"?").slice(0,2).toUpperCase())}</div><div class="thanks-copy"><h3>${escapeHtml(person.name)}</h3><p>${escapeHtml(person.note||"With appreciation from CartPrac.")}</p></div>`;
+    grid.appendChild(card);
+  });
+}
+
 function openStore(id,updateHash=true){const rank=RANKS.find(item=>item.id===id);if(!rank)return;currentRank=rank;if(updateHash&&window.location.hash!=="#rank-"+rank.id)history.pushState(null,"",window.location.pathname+window.location.search+"#rank-"+rank.id);document.getElementById("modalRankBadge").textContent=rank.badge||"CartPrac rank";document.getElementById("modalRankName").textContent=rank.name;document.getElementById("modalRankPrice").innerHTML=escapeHtml(formatPrice(rank))+" <span>ONE-TIME</span>";document.getElementById("modalRankDescription").textContent=rank.description||"CartPrac supporter rank.";const perks=document.getElementById("modalRankPerks");perks.replaceChildren();(rank.perks||[]).forEach(text=>{const li=document.createElement("li");li.textContent=text;perks.appendChild(li)});const details=document.getElementById("rankDetailsLink");if(rank.detailsUrl&&/^https?:\/\//i.test(rank.detailsUrl)){details.href=rank.detailsUrl;details.hidden=false}else{details.hidden=true;details.removeAttribute("href")}const note=document.getElementById("rankModalNote");note.classList.remove("is-warning");note.textContent=rank.checkoutUrl?"You will be sent to this rank's checkout page.":"Online checkout is not connected yet. Use Discord to ask about purchasing this rank.";const purchase=document.getElementById("rankPurchaseButton");purchase.textContent=rank.checkoutUrl?"Continue to checkout ↗":"Ask about this rank ↗";document.getElementById("rankModal").hidden=false;document.body.style.overflow="hidden";document.getElementById("rankCloseButton").focus();}
 function closeRankModal(updateHash=true){document.getElementById("rankModal").hidden=true;document.body.style.overflow="";currentRank=null;if(updateHash&&/^#rank-[a-z0-9-]+$/i.test(window.location.hash))history.replaceState(null,"",window.location.pathname+window.location.search)}
 function copyRankLink(){if(!currentRank)return;const url=window.location.href.split("#")[0]+"#rank-"+currentRank.id;const note=document.getElementById("rankModalNote");if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(url).then(()=>{note.textContent="Rank link copied."}).catch(()=>window.prompt("Copy this rank link:",url));else window.prompt("Copy this rank link:",url)}
@@ -208,7 +247,7 @@ document.getElementById("queueLeaveButton").addEventListener("click",()=>submitW
 document.getElementById("profileRefreshButton").addEventListener("click",()=>submitWebAction("profile_refresh"));
 document.getElementById("disconnectButton").addEventListener("click",()=>{setWebToken("");showUnlinkedAccount();setWebActionStatus("Disconnected this browser from the Minecraft account.")});
 
-const year=document.getElementById("year");year.textContent=new Date().getFullYear();document.getElementById("serverAddressText").textContent=SERVER_ADDRESS;renderRanks();renderStaff();const initialRank=window.location.hash.match(/^#rank-([a-z0-9-]+)$/i);if(initialRank)openStore(initialRank[1],false);refreshStats();loadWebsiteSession();setInterval(refreshStats,15000);
+const year=document.getElementById("year");year.textContent=new Date().getFullYear();document.getElementById("serverAddressText").textContent=SERVER_ADDRESS;renderRanks();renderStaff();const initialRank=window.location.hash.match(/^#rank-([a-z0-9-]+)$/i);if(initialRank)openStore(initialRank[1],false);refreshStats();loadWebsiteSession();renderThanks();setInterval(refreshStats,15000);
 </script>
 </body>
 </html>
