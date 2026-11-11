@@ -62,7 +62,7 @@
       "enabled": true,
       "durationSeconds": 3600,
       "modifierIntervalSeconds": 300,
-      "maximumActiveModifiers": 3,
+      "maximumActiveModifiers": 1,
       "modifiers": [
         "glow_and_behold",
         "starvation",
@@ -70,8 +70,6 @@
         "vulnerable",
         "ultra_hardcore",
         "paranoia",
-        "shieldless",
-        "shopping_spree",
         "stubby_arms",
         "miners_haven",
         "forbidden_fruit",
@@ -83,7 +81,7 @@
       "maximumBots": 16,
       "onePerParticipant": true,
       "damagePlayers": false,
-      "placeTemporaryWebs": true,
+      "placeTemporaryWebs": false,
       "webLifetimeSeconds": 8,
       "repathTicks": 20
     }
