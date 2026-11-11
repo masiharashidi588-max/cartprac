@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "project": "MaxSmpPlugin",
+  "revision": 1,
+  "events": {
+    "naturalDisasters": {
+      "enabled": true,
+      "durationSeconds": 240,
+      "arenaBorderSize": 360,
+      "borderShrinkPerPhase": 24,
+      "maximumConcurrentDisasters": 2,
+      "escalationAfterPhases": 2,
+      "disasters": [
+        {
+          "id": "meteor_shower",
+          "enabled": true,
+          "warningSeconds": 8,
+          "intervalSeconds": 24
+        },
+        {
+          "id": "orbital_laser",
+          "enabled": true,
+          "warningSeconds": 6,
+          "intervalSeconds": 32
+        },
+        {
+          "id": "water_geysers",
+          "enabled": true,
+          "warningSeconds": 5,
+          "intervalSeconds": 18
+        },
+        {
+          "id": "lava_geysers",
+          "enabled": true,
+          "warningSeconds": 7,
+          "intervalSeconds": 28
+        },
+        {
+          "id": "dust_devils",
+          "enabled": true,
+          "warningSeconds": 5,
+          "intervalSeconds": 22
+        },
+        {
+          "id": "greeds_blessing",
+          "enabled": true,
+          "warningSeconds": 3,
+          "intervalSeconds": 45
+        }
+      ]
+    },
+    "controlPoints": {
+      "enabled": true,
+      "totalPoints": 8,
+      "openAtOnce": 2,
+      "captureCount": 5,
+      "controlSeconds": 35,
+      "captureSeconds": 55,
+      "progressDecayPerSecond": 1.5
+    },
+    "chaos": {
+      "enabled": true,
+      "durationSeconds": 3600,
+      "modifierIntervalSeconds": 300,
+      "maximumActiveModifiers": 3,
+      "modifiers": [
+        "glow_and_behold",
+        "starvation",
+        "exhausted",
+        "vulnerable",
+        "ultra_hardcore",
+        "paranoia",
+        "shieldless",
+        "shopping_spree",
+        "stubby_arms",
+        "miners_haven",
+        "forbidden_fruit",
+        "quick_math"
+      ]
+    },
+    "pursuers": {
+      "enabled": true,
+      "maximumBots": 16,
+      "onePerParticipant": true,
+      "damagePlayers": false,
+      "placeTemporaryWebs": true,
+      "webLifetimeSeconds": 8,
+      "repathTicks": 20
+    }
+  }
+}
