@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "project": "MaxSmpPlugin",
-  "revision": 1,
+  "revision": 2,
   "events": {
     "naturalDisasters": {
       "enabled": true,
@@ -78,7 +78,7 @@
     },
     "pursuers": {
       "enabled": true,
-      "maximumBots": 16,
+      "maximumBots": 32,
       "onePerParticipant": true,
       "damagePlayers": false,
       "placeTemporaryWebs": false,
